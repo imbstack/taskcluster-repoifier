@@ -1,0 +1,17 @@
+{
+  "name": "taskcluster",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "eslint": "5.10.0",
+    "eslint-config-taskcluster": "3.3.0",
+    "mocha": "5.2.0"
+  },
+  "scripts": {
+    "lint": "eslint --cache --ext js packages",
+    "test": "mocha --opts .mocha.opts packages/*/test/*_test.js"
+  }
+}
