@@ -6,7 +6,7 @@
 mkdir clones
 cd clones
 
-git clone https://github.com/taskcluster/taskcluster-queue.git
+git clone https://github.com/taskcluster/taskcluster-queue.git --branch fix-history
 git clone https://github.com/taskcluster/taskcluster-auth.git
 git clone https://github.com/taskcluster/taskcluster-events.git
 git clone https://github.com/taskcluster/taskcluster-github.git
@@ -19,12 +19,12 @@ git clone https://github.com/taskcluster/taskcluster-secrets.git
 git clone https://github.com/taskcluster/taskcluster-treeherder.git
 
 git clone https://github.com/taskcluster/eslint-config-taskcluster.git
-git clone https://github.com/taskcluster/taskcluster-client.git
+git clone https://github.com/taskcluster/taskcluster-client.git --branch fix-tests
 git clone https://github.com/taskcluster/taskcluster-lib-api.git
 git clone https://github.com/taskcluster/taskcluster-lib-app.git
 git clone https://github.com/taskcluster/taskcluster-lib-azure.git
 git clone https://github.com/taskcluster/taskcluster-lib-docs.git
-git clone https://github.com/taskcluster/taskcluster-lib-iterate.git
+git clone https://github.com/taskcluster/taskcluster-lib-iterate.git --branch monorepo-prep
 git clone https://github.com/taskcluster/taskcluster-lib-loader.git
 git clone https://github.com/taskcluster/taskcluster-lib-monitor.git
 git clone https://github.com/taskcluster/taskcluster-lib-pulse.git
@@ -41,6 +41,6 @@ git clone https://github.com/taskcluster/typed-env-config.git
 # histories that are broken enough to make
 # lerna fail to import
 
-cd taskcluster-queue
-git filter-branch -f --index-filter "git rm -rf --cached --ignore-unmatch node_modules" HEAD
-git filter-branch -f --index-filter "git rm -rf --cached --ignore-unmatch taskcluster-queue.conf.json.enc" HEAD
+#cd taskcluster-queue
+#git filter-branch -f --index-filter "git rm -rf --cached --ignore-unmatch node_modules" HEAD
+#git filter-branch -f --index-filter "git rm -rf --cached --ignore-unmatch taskcluster-queue.conf.json.enc" HEAD

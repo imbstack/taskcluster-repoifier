@@ -3,17 +3,16 @@
 cd taskcluster
 
 # Get rid of old yarn.locks
-find packages -name "yarn.lock" -delete
+find {libraries,services} -name "yarn.lock" -delete
 
 # Get rid of old eslint configs
-find packages -name ".eslintrc" -delete
+find {libraries,services} -name ".eslintrc" -delete
 
-# Get rid of old mocha configs
-find packages -name "mocha.opts" -delete
-
-for file in $(ls packages/*/package.json); do
-	jq '{name, version, private, dependencies, devDependencies} | del(.devDependencies.mocha)' $file | sponge $file
+for file in $(ls {libraries,services}/*/package.json); do
+	jq 'del(.repository,.scripts.pretest)' $file | sponge $file
 done
 
 yarn
-yarn workspace taskcluster-auth add --dev debug
+
+git add ./yarn.lock
+git commit -am "Post import fixes"
