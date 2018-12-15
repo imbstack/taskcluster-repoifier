@@ -8,7 +8,7 @@
   ],
   "devDependencies": {
     "eslint": "5.10.0",
-    "eslint-config-taskcluster": "3.3.0"
+    "eslint-config-taskcluster": "file:libaries/eslint-config-taskcluster"
   },
   "scripts": {
     "lint": "eslint --cache --ext js libraries services",
