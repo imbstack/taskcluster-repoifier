@@ -7,6 +7,10 @@ git init .
 cp ../scripts/eslintrc.yml ./.eslintrc.yml
 cp ../scripts/gitignore ./.gitignore
 cp ../scripts/eslintignore ./.eslintignore
+cp ../scripts/CODE_OF_CONDUCT.md ./CODE_OF_CONDUCT.md
+cp ../scripts/CONTRIBUTING.md ./CONTRIBUTING.md
+cp ../scripts/README.md ./README.md
+cp ../scripts/LICENSE ./LICENSE
 cp ../scripts/package.json .
 cp ../scripts/lerna.json .
 git add .
