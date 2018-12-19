@@ -1,4 +1,4 @@
-.PHONY: fix clean
+.PHONY: post clean
 
 clones:
 	./scripts/clone-repos.sh

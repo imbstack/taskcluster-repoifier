@@ -1,6 +1,6 @@
 1. You'll need lerna, git, yarn, and probably a couple more things to make this work
 2. `make post` should get you 99% of the way to a monorepo based on the master branches of
    our repos (and some other branches that have various fixes in them)
-3. After that you'll need to `yarn install`, `yarn lint --fix`, and finally manually fix the
+3. After that you'll need to `yarn`, `yarn lint --fix`, and finally manually fix the
    remaining lint issues
 4. Some of our libraries/services only work with node 8. Use that for now

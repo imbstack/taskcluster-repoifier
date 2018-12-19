@@ -6,33 +6,32 @@
 mkdir clones
 cd clones
 
-git clone https://github.com/taskcluster/taskcluster-queue.git --branch fix-history
-git clone https://github.com/taskcluster/taskcluster-auth.git
-git clone https://github.com/taskcluster/taskcluster-events.git
-git clone https://github.com/taskcluster/taskcluster-github.git
-git clone https://github.com/taskcluster/taskcluster-hooks.git
-git clone https://github.com/taskcluster/taskcluster-index.git
-git clone https://github.com/taskcluster/taskcluster-login.git
-git clone https://github.com/taskcluster/taskcluster-notify.git
-git clone https://github.com/taskcluster/taskcluster-purge-cache.git
-git clone https://github.com/taskcluster/taskcluster-secrets.git
-git clone https://github.com/taskcluster/taskcluster-treeherder.git
+git clone https://github.com/taskcluster/taskcluster-queue.git --branch fix-history queue
+git clone https://github.com/taskcluster/taskcluster-auth.git auth
+git clone https://github.com/taskcluster/taskcluster-events.git events
+git clone https://github.com/taskcluster/taskcluster-github.git github
+git clone https://github.com/taskcluster/taskcluster-hooks.git hooks
+git clone https://github.com/taskcluster/taskcluster-index.git index
+git clone https://github.com/taskcluster/taskcluster-login.git login
+git clone https://github.com/taskcluster/taskcluster-notify.git notify
+git clone https://github.com/taskcluster/taskcluster-purge-cache.git purge-cache
+git clone https://github.com/taskcluster/taskcluster-secrets.git secrets
+git clone https://github.com/taskcluster/taskcluster-treeherder.git treeherder
 
-git clone https://github.com/taskcluster/eslint-config-taskcluster.git
-git clone https://github.com/taskcluster/taskcluster-client.git --branch fix-tests
-git clone https://github.com/taskcluster/taskcluster-lib-api.git
-git clone https://github.com/taskcluster/taskcluster-lib-app.git
-git clone https://github.com/taskcluster/taskcluster-lib-azure.git
-git clone https://github.com/taskcluster/taskcluster-lib-docs.git
-git clone https://github.com/taskcluster/taskcluster-lib-iterate.git --branch monorepo-prep
-git clone https://github.com/taskcluster/taskcluster-lib-loader.git
-git clone https://github.com/taskcluster/taskcluster-lib-monitor.git
-git clone https://github.com/taskcluster/taskcluster-lib-pulse.git
-git clone https://github.com/taskcluster/taskcluster-lib-references.git
-git clone https://github.com/taskcluster/taskcluster-lib-scopes.git
-git clone https://github.com/taskcluster/taskcluster-lib-testing.git
-git clone https://github.com/taskcluster/taskcluster-lib-urls.git
-git clone https://github.com/taskcluster/taskcluster-lib-validate.git
+git clone https://github.com/taskcluster/eslint-config-taskcluster.git --branch temporary-for-monorepo eslint-config
+git clone https://github.com/taskcluster/taskcluster-client.git client
+git clone https://github.com/taskcluster/taskcluster-lib-api.git api
+git clone https://github.com/taskcluster/taskcluster-lib-app.git app
+git clone https://github.com/taskcluster/taskcluster-lib-azure.git azure
+git clone https://github.com/taskcluster/taskcluster-lib-docs.git docs
+git clone https://github.com/taskcluster/taskcluster-lib-iterate.git iterate
+git clone https://github.com/taskcluster/taskcluster-lib-loader.git loader
+git clone https://github.com/taskcluster/taskcluster-lib-monitor.git monitor
+git clone https://github.com/taskcluster/taskcluster-lib-pulse.git pulse
+git clone https://github.com/taskcluster/taskcluster-lib-references.git references
+git clone https://github.com/taskcluster/taskcluster-lib-scopes.git scopes
+git clone https://github.com/taskcluster/taskcluster-lib-testing.git testing
+git clone https://github.com/taskcluster/taskcluster-lib-validate.git validate
 git clone https://github.com/taskcluster/typed-env-config.git
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

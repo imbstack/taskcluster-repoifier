@@ -8,7 +8,9 @@
   ],
   "devDependencies": {
     "eslint": "5.10.0",
-    "eslint-config-taskcluster": "file:libaries/eslint-config-taskcluster"
+    "eslint-config-taskcluster": "file:libraries/eslint-config",
+    "typed-env-config": "file:libraries/typed-env-config",
+    "taskcluster-lib-testing": "file:libraries/testing"
   },
   "scripts": {
     "lint": "eslint --cache --ext js libraries services",
