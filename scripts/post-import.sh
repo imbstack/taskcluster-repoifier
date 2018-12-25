@@ -3,27 +3,27 @@
 cd taskcluster
 
 # Get rid of old yarn.locks
-find {libraries,services} -name "yarn.lock" -delete
+find {libraries,services,infrastructure} -name "yarn.lock" -delete
 
 # Get rid of old eslint configs
-find {libraries,services} -name ".eslintrc" -delete
+find {libraries,services,infrastructure} -name ".eslintrc" -delete
 
 # Get rid of old community stuff
-find {libraries,services} -name "CODE_OF_CONDUCT.md" -delete
-find {libraries,services} -name "CONTRIBUTING.md" -delete
-find {libraries,services} -name "LICENSE" -delete
+find {libraries,services,infrastructure} -name "CODE_OF_CONDUCT.md" -delete
+find {libraries,services,infrastructure} -name "CONTRIBUTING.md" -delete
+find {libraries,services,infrastructure} -name "LICENSE" -delete
 
-find {libraries,services} -name "package.json" -exec cat {} \; | 
+find {libraries,services,infrastructure} -name "package.json" -exec cat {} \; | 
 jq -sr 'map(.devDependencies | keys) | flatten | .[]' |
 sort |
 uniq |
 rg -v '(eslint*|taskcluster-lib-*|typed-env-config)' > ../devDependencies
 
-for file in $(ls {libraries,services}/*/package.json); do
+for file in $(ls {libraries,services,infrastructure}/*/package.json); do
        jq 'del(.repository,.scripts.pretest,.devDependencies)' $file | sponge $file
 done
 
-for file in $(ls {libraries,services}/*/package.json); do
+for file in $(ls {libraries,services,infrastructure}/*/package.json); do
 	sed -Ei 's/"(typed-env-config)":[^,]*/"\1": "file:..\/..\/libraries\/\1"/' $file
 	sed -Ei 's/"(taskcluster-client)":[^,]*/"\1": "file:..\/..\/libraries\/client"/' $file
 	# Can't just do * here because lib-urls and lib-config don't migrate

@@ -34,6 +34,9 @@ git clone https://github.com/taskcluster/taskcluster-lib-testing.git testing
 git clone https://github.com/taskcluster/taskcluster-lib-validate.git validate
 git clone https://github.com/taskcluster/typed-env-config.git
 
+git clone https://github.com/taskcluster/taskcluster-builder.git builder
+git clone https://github.com/taskcluster/taskcluster-terraform.git terraform
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Arbitary steps we need to take to clean up
