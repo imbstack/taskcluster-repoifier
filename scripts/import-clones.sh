@@ -55,4 +55,3 @@ lerna import --flatten -y --dest libraries ../clones/validate
 lerna import --flatten -y --dest libraries ../clones/typed-env-config
 
 lerna import --flatten -y --dest infrastructure ../clones/builder
- lerna import --flatten -y --dest infrastructure ../clones/terraform
