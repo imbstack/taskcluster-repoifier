@@ -8,6 +8,10 @@ find {libraries,services} -name "yarn.lock" -delete
 # Get rid of old eslint configs
 find {libraries,services} -name ".eslintrc" -delete
 
+# Get rid of testing stuff
+find {libraries,services} -name ".travis.yml" -delete
+find {libraries,services} -name ".taskcluster.yml" -delete
+
 # Get rid of old community stuff
 find {libraries,services} -name "CODE_OF_CONDUCT.md" -delete
 find {libraries,services} -name "CONTRIBUTING.md" -delete
@@ -20,7 +24,7 @@ uniq |
 rg -v '(eslint*|taskcluster-lib-*|typed-env-config)' > ../devDependencies
 
 for file in $(ls {libraries,services}/*/package.json); do
-       jq 'del(.repository,.scripts.pretest,.devDependencies)' $file | sponge $file
+       jq 'del(.repository,.scripts.pretest,.devDependencies,.renovate)' $file | sponge $file
 done
 
 for file in $(ls {libraries,services}/*/package.json); do
@@ -39,6 +43,9 @@ for file in $(ls {libraries,services}/*/package.json); do
 	sed -Ei 's/"taskcluster-lib-(scopes)":[^,]*/"taskcluster-lib-\1": "file:..\/..\/libraries\/\1"/' $file
 	sed -Ei 's/"taskcluster-lib-(testing)":[^,]*/"taskcluster-lib-\1": "file:..\/..\/libraries\/\1"/' $file
 	sed -Ei 's/"taskcluster-lib-(validate)":[^,]*/"taskcluster-lib-\1": "file:..\/..\/libraries\/\1"/' $file
+
+	# Now need to get lib-urls up to date
+	sed -Ei 's/"taskcluster-lib-(urls)":[^,]*/"taskcluster-lib-\1": "^12.0.0"/' $file
 done
 
 yarn

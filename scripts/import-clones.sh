@@ -7,6 +7,7 @@ git init .
 cp ../scripts/eslintrc.yml ./.eslintrc.yml
 cp ../scripts/gitignore ./.gitignore
 cp ../scripts/eslintignore ./.eslintignore
+cp ../scripts/taskcluster.yml ./.taskcluster.yml
 cp ../scripts/CODE_OF_CONDUCT.md ./CODE_OF_CONDUCT.md
 cp ../scripts/CONTRIBUTING.md ./CONTRIBUTING.md
 cp ../scripts/README.md ./README.md
@@ -17,12 +18,17 @@ cp ../scripts/lerna.json .
 mkdir .github
 cp ../scripts/CODEOWNERS ./.github/CODEOWNERS
 
+mkdir test
+cp ../scripts/mocha.opts ./test/mocha.opts
+cp ../scripts/meta_test.js ./test/meta_test.js
+
 git add .
 git commit -m "Init"
 
+git remote add origin git@github.com:taskcluster/taskcluster.git
+
 lerna import --flatten -y --dest services ../clones/queue
 lerna import --flatten -y --dest services ../clones/auth
-lerna import --flatten -y --dest services ../clones/events
 lerna import --flatten -y --dest services ../clones/github
 lerna import --flatten -y --dest services ../clones/hooks
 lerna import --flatten -y --dest services ../clones/index
