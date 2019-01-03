@@ -27,6 +27,12 @@ for file in $(ls {libraries,services,infrastructure}/*/package.json); do
        jq 'del(.repository,.scripts.pretest,.devDependencies,.renovate)' $file | sponge $file
 done
 
+for file in $(ls services/*/Procfile); do
+	DIRNAME=$(dirname $file)
+	sed -E "s|: +|: cd $DIRNAME \&\& |" "$file"
+done
+
+
 for file in $(ls {libraries,services,infrastructure}/*/package.json); do
 	sed -Ei 's/"(typed-env-config)":[^,]*/"\1": "file:..\/..\/libraries\/\1"/' $file
 	sed -Ei 's/"(taskcluster-client)":[^,]*/"\1": "file:..\/..\/libraries\/client"/' $file
