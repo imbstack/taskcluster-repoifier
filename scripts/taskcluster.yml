@@ -50,6 +50,7 @@ tasks:
     - taskcluster-queue
     - taskcluster-secrets
     - taskcluster-treeherder
+    - taskcluster-builder
     others:
     - lint
     - test:meta

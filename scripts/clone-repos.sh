@@ -6,7 +6,7 @@
 mkdir clones
 cd clones
 
-git clone https://github.com/taskcluster/taskcluster-queue.git --branch monorepo-fixes-with-history-fixes queue
+git clone https://github.com/taskcluster/taskcluster-queue.git --branch fix-history queue
 git clone https://github.com/taskcluster/taskcluster-auth.git auth
 git clone https://github.com/taskcluster/taskcluster-github.git github
 git clone https://github.com/taskcluster/taskcluster-hooks.git hooks
@@ -17,7 +17,7 @@ git clone https://github.com/taskcluster/taskcluster-purge-cache.git purge-cache
 git clone https://github.com/taskcluster/taskcluster-secrets.git secrets
 git clone https://github.com/taskcluster/taskcluster-treeherder.git treeherder
 
-git clone https://github.com/taskcluster/eslint-config-taskcluster.git --branch temporary-for-monorepo eslint-config
+git clone https://github.com/taskcluster/eslint-config-taskcluster.git eslint-config
 git clone https://github.com/taskcluster/taskcluster-client.git client
 git clone https://github.com/taskcluster/taskcluster-lib-api.git api
 git clone https://github.com/taskcluster/taskcluster-lib-app.git app
@@ -32,6 +32,9 @@ git clone https://github.com/taskcluster/taskcluster-lib-scopes.git scopes
 git clone https://github.com/taskcluster/taskcluster-lib-testing.git testing
 git clone https://github.com/taskcluster/taskcluster-lib-validate.git validate
 git clone https://github.com/taskcluster/typed-env-config.git
+
+git clone https://github.com/taskcluster/taskcluster-builder.git builder
+git clone https://github.com/taskcluster/taskcluster-terraform.git terraform
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

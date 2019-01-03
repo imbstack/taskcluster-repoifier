@@ -4,7 +4,8 @@
   "private": true,
   "workspaces": [
     "libraries/*",
-    "services/*"
+    "services/*",
+    "infrastructure/*"
   ],
   "devDependencies": {
     "eslint": "5.10.0",
@@ -13,7 +14,7 @@
     "taskcluster-lib-testing": "file:libraries/testing"
   },
   "scripts": {
-    "lint": "eslint --cache --ext js libraries services",
+    "lint": "eslint --cache --ext js libraries services infrastructure",
     "test": "yarn workspaces run test",
     "test:meta": "mocha test/*_test.js"
   },
