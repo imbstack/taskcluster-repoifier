@@ -29,7 +29,7 @@ done
 
 for file in $(ls services/*/Procfile); do
 	DIRNAME=$(dirname $file)
-	sed -E "s|: +|: cd $DIRNAME \&\& |" "$file"
+	sed -iE "s|: +|: cd $DIRNAME \&\& |" "$file"
 done
 
 
