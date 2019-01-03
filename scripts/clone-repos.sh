@@ -6,9 +6,8 @@
 mkdir clones
 cd clones
 
-git clone https://github.com/taskcluster/taskcluster-queue.git --branch fix-history queue
+git clone https://github.com/taskcluster/taskcluster-queue.git --branch monorepo-fixes-with-history-fixes queue
 git clone https://github.com/taskcluster/taskcluster-auth.git auth
-git clone https://github.com/taskcluster/taskcluster-events.git events
 git clone https://github.com/taskcluster/taskcluster-github.git github
 git clone https://github.com/taskcluster/taskcluster-hooks.git hooks
 git clone https://github.com/taskcluster/taskcluster-index.git index
